@@ -1,0 +1,25 @@
+Architecture de cette archive :
+|-> pp/  Code source bas niveau de la bibliothèque Prog&Play. Ne pas modifier
+|        ces fichiers sauf si vous savez ce que vous faites.
+|
+|-> Client_Interfaces/    Contient les interfaces haut niveau
+   |
+   |-> ada/      Contient l'interface Ada et son exemple associé. Consultez le
+   |               fichier LISEZMOI.txt pour obtenir plus d'information sur la
+   |               démarche à suivre.
+   |-> c-cpp/    Contient les interfaces C et leur exemple associé. Consultez le
+   |               fichier LISEZMOI.txt pour obtenir plus d'information sur la
+   |               démarche à suivre.
+   |-> java/     Contient l'interface Java et son exemple associé. Consultez le
+   |               fichier LISEZMOI.txt pour obtenir plus d'information sur la
+   |               démarche à suivre.
+   |-> ocaml/    Contient l'interface OCaml et son exemple associé. Consultez le
+   |               fichier LISEZMOI.txt pour obtenir plus d'information sur la
+   |               démarche à suivre.
+   |-> python/   Contient l'interface Python et son exemple associé. Consultez le
+   |               fichier LISEZMOI.txt pour obtenir plus d'information sur la
+   |               démarche à suivre.
+   |-> scratch/  Contient l'interface Scratch et son exemple associé. Consultez
+                   le fichier LISEZMOI.txt pour obtenir plus d'information sur
+                   la démarche à suivre.
+

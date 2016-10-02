@@ -1,0 +1,14 @@
+Ce fichier décrit la séquence d'instructions à suivre pour tester l'exemple écrit en Python.
+Vous devez avoir installé sur votre ordinateur un environnement pour interpréter le Python.
+
+1) Compiler l'interface bas niveau de Prog&Play (voir ../../pp) et installer la bibliothèque pp-client.dll dans ce dossier
+2) Lancer le jeu
+3) Ouvrir une invite de commande
+4) Exécuter l'exemple en saisissant la commande :
+	python example.py
+
+Conceil d'utilisation :
+1) Modifier la position dans l'exemple avec de nouvelles coordonnées. Re-exécuter l'exemple pour observer les changements dans le jeu.
+2) Inspirez-vous de cet exemple pour créer vos propres programmes.
+
+Note : L'ensemble des fonctions et constantes d'intéraction avec le jeu sont incluses dans les fichiers "constantList_KP4_1.py" et "pp.py". N'hésitez pas à les consulter.

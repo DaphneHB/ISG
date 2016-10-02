@@ -1,0 +1,39 @@
+Ce fichier décrit la séquence d'instructions à suivre pour tester les exemples écrits en C (interface classique, algorithmique et imm).
+Utilisateurs Linux : Vous devez avoir installé sur votre ordinateur le compilateur "g++" ainsi que Boost (1.42) et l'utilitaire "make".
+Utilisateurs Windows : Vous devez avoir récupéré l'archive disponible à cette adresse http://www.irit.fr/ProgAndPlay/ressources/PP_libs_2.5.zip et l'avoir décompressée dans le repertoire de Prog&Play. L'architecture des fichiers suivante doit être repectée :
+	<Rep Prog&Play>/Client_Interfaces/...
+	<Rep Prog&Play>/pp/...
+	<Rep Prog&Play>/README.txt
+	<Rep Prog&Play>/LISEZMOI.txt
+	<Rep Prog&Play>/PP_libs/
+
+Remarque : les chemins d'accès aux fichiers évoqués ci-dessous sont relatifs à l'emplacement de ce fichier "LISEZMOI.txt".
+
+1) ouvrir une invite de commande ou une console
+2) Se positionner dans le répertoire contenant le Makefile
+	2.1) Utilisateurs Linux : Ajouter le "." aux variables d'environnement PATH et LD_LIBRARY_PATH si celles-ci ne le contiennent pas déjà :
+		export PATH=.:$PATH
+		export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
+	2.2) Utilisateurs Windows : Ajouter à la variable d'environnement PATH le chemin d'accès à l'utilitaire make :
+		set PATH=<Rep Prog&Play>/PP_libs/MinGW/bin;%PATH%
+3) Compilation :
+	3.1) Utilisateurs Linux : Saisir la commande "make"
+	3.2) Utilisateurs Windows : Saisir la commande "mingw32-make"
+		3.2.1) Si vous obtenez l'erreur : "0 [main] us 0 init_cheap: VirtualAlloc pointer is null, Win32 error 487..." cela vient d'un blocage de votre antivirus, désactivez le temporairement le temps de la compilation.
+4) Lancer le jeu
+5) Exécution de l'exemple C : saisir dans une console "example"
+   Exécution de l'exemple C (algorithmique) : saisir dans une console "example_algo"
+   Exécution de l'exemple C (imm) : saisir dans une console "example_imm"
+
+Conceil d'utilisation :
+1) Modifier la position dans les exemples avec de nouvelles coordonnées. Recompiler et re-exécuter le ou les exemples pour observer les changements dans le jeu.
+2) Inspirez-vous de ces exemples pour créer vos propres programmes.
+3) Pour compiler vos propres programmes, adaptez les lignes de compilation suivante à votre contexte :
+	3.1) interface C classique
+		g++ -o monProgramme monProgramme.c -I. -I../../pp -L. -lpp-client
+	3.2) interface C algorithmique
+		g++ -o monProgramme monProgramme.c -I. -I../../pp -L. -lpp-client
+	3.3) interface C imm
+		g++ -o monProgramme monProgramme.c -I. -L. -lppimm
+
+Note : L'ensemble des fonctions et constantes d'intéraction avec le jeu sont incluses dans les fichiers "./constantList_KP4.1.h", "../../pp/PP_Client.h", "../../pp/PP.h". N'hésitez pas à les consulter.

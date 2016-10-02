@@ -1,0 +1,43 @@
+Ce fichier décrit la séquence d'instruction à suivre pour tester l'exemple écrit en Scratch.
+Utilisateurs Linux : Vous devez avoir installé sur votre ordinateur le compilateur "g++" ainsi que Boost (1.42) et l'utilitaire "make".
+Utilisateurs Windows : Vous devez avoir récupéré l'archive disponible à cette adresse http://www.irit.fr/ProgAndPlay/ressources/PP_libs_2.5.zip et l'avoir décompressée dans le repertoire de Prog&Play. L'architecture des fichiers suivante doit être repectée :
+	<Rep Prog&Play>/Client_Interfaces/...
+	<Rep Prog&Play>/pp/...
+	<Rep Prog&Play>/README.txt
+	<Rep Prog&Play>/LISEZMOI.txt
+	<Rep Prog&Play>/PP_libs/
+
+Remarque : les chemins d'accès aux fichiers évoqués ci-dessous sont relatifs à l'emplacement de ce fichier "Lisez-moi.txt".
+
+Installation du logiciel Scratch :
+1) Installer la version originale de Scratch :
+	1.1) Utilisateur Linux :  http://info.scratch.mit.edu/Linux_installer
+	1.2) Utilisateur Windows : http://scratch.mit.edu/download
+2) Mise à jour du logiciel Scratch :
+	2.1) Utilisateurs Linux :
+		2.1.1) Copier/Coller le fichier "./patch/locale/fr.po" dans le répertoire "/usr/share/scratch/locale/" (par défaut)
+		2.1.2) Copier/Coller le fichier "./patch/Scratch.image" dans le répertoire "/usr/lib/scratch" (par défaut)
+	2.2) Utilisateurs Windows : Copier/Coller l'ensemble des fichiers du répertoire "./patch" dans le répertoire d'installation de la version originale de Scratch
+	
+Compilation de la bibliothèque Prog&Play :
+1) ouvrir une invite de commande ou une console
+2) Se positionner dans le répertoire contenant le Makefile
+	2.1) Utilisateur Linux : Ajouter le "." aux variables d'environnement PATH et LD_LIBRARY_PATH si celles-ci ne le contiennent pas déjà :
+		export PATH=.:$PATH
+		export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
+	2.2) Utilisateurs Windows : Ajouter à la variable d'environnement PATH le chemin d'accès à l'utilitaire make :
+		set PATH=<Rep Prog&Play>/PP_libs/MinGW/bin;%PATH%
+3) Compilation :
+	3.1) Utilisateurs Linux : Saisir la commande "make"
+	3.2) Utilisateurs Windows : Saisir la commande "mingw32-make"
+		3.2.1) Si vous obtenez l'erreur : "0 [main] us 0 init_cheap: VirtualAlloc pointer is null, Win32 error 487..." cela vient d'un blocage de votre antivirus, désactivez le temporairement le temps de la compilation.
+4) Installation de la bibliothèque
+	4.1) Utilisateur Linux : Copier/Coller le fichier "ProgAndPlayPlugin" dans le répertoire "/usr/lib/scratch/Plugins" (par défaut).
+	4.2) Utilisateur Windows : Copier/Coller les bibliothèques "ProgAndPlayPlugin.dll" et "pp-client.dll" dans le répertoire d'installation de la version originale de Scratch.
+5) Lancer Scratch et ouvrir l'exemple "example.sb"
+6) Lancer le jeu
+7) Dans Scratch, cliquer sur le drapeau vert pour exécuter l'exemple.
+
+Conceil d'utilisation :
+1) Modifier l'exemple en changeant par exemple les coordonnées de déplacement. Re-exécuter l'exemple pour observer les changements dans le jeu.
+2) Inspirez-vous de cet exemple pour créer vos propres programmes.

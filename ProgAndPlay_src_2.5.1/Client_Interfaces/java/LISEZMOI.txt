@@ -1,0 +1,40 @@
+Ce fichier décrit la séquence d'instructions à suivre pour tester l'exemple écrit en Java.
+Utilisateurs Linux : Vous devez avoir installé sur votre ordinateur les compilateurs "g++" et Java (jdk 1.6) ainsi que Boost (1.42) et l'utilitaire "make".
+Utilisateurs Windows : Vous devez avoir récupéré l'archive disponible à cette adresse http://www.irit.fr/ProgAndPlay/ressources/PP_libs_2.5.zip et l'avoir décompressée dans le repertoire de Prog&Play. L'architecture des fichiers suivante doit être repectée :
+	<Rep Prog&Play>/Client_Interfaces/...
+	<Rep Prog&Play>/pp/...
+	<Rep Prog&Play>/README.txt
+	<Rep Prog&Play>/LISEZMOI.txt
+	<Rep Prog&Play>/PP_libs/
+
+Remarque : les chemins d'accès aux fichiers évoqués ci-dessous sont relatifs à l'emplacement de ce fichier "LISEZMOI.txt".
+
+1) ouvrir une invite de commande ou une console
+2) Se positionner dans le répertoire contenant le fichier Makefile
+	2.1) Utilisateurs Linux : Ajouter le "." aux variables d'environnement PATH et LD_LIBRARY_PATH si celles-ci ne le contiennent pas déjà :
+		export PATH=.:$PATH
+		export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
+	2.2) Utilisateurs Windows :
+		2.2.1) Ajouter à la variable d'environnement PATH le chemin d'accès à l'utilitaire make :
+			set PATH=<Rep Prog&Play>/PP_libs/MinGW/bin;%PATH%
+		2.2.2) Ajouter à la variable d'environnement PATH le chemin d'accès aux binaires java :
+			set PATH=<Rep Prog&Play>/PP_libs/jdk1.6.0_21/bin;%PATH%
+3) Compilation :
+	3.1) Utilisateurs Linux : Saisir la commande "make"
+		3.1.1) Si votre version de java n'est pas installée dans le répertoire "/usr/lib/jvm/java-6-sun", vous pouvez indiquer l'emplacement correct au Makefile grace à la variable JAVA_PATH (exemple : make JAVA_PATH="/usr/local/lib/jvm/java-6-sun")
+	3.2) Utilisateurs Windows : Saisir la commande "mingw32-make"
+		3.2.1) Si vous obtenez l'erreur : "0 [main] us 0 init_cheap: VirtualAlloc pointer is null, Win32 error 487..." cela vient d'un blocage de votre antivirus, désactivez le temporairement le temps de la compilation.
+4) Lancer le jeu
+5) Exécution de l'exemple : Saisir dans une console "java example.Example"
+
+Conceil d'utilisation :
+1) Modifier la position dans l'exemple avec de nouvelles coordonnées. Recompiler et re-exécuter l'exemple pour observer les changements dans le jeu.
+2) Inspirez-vous de cet exemple pour créer votre propre programme.
+3) Pour compiler votre propre programme, adaptez la ligne de compilation suivante à votre contexte :
+	3.1) Utilisateur Windows : javac -classpath .;pp.jar monPackage\monProgramme.java
+	3.1) Utilisateur Linux : javac -classpath .:pp.jar monPackage/monProgramme.java
+
+Note : L'ensemble des fonctions et constantes d'intéraction avec le jeu sont présentées dans la documentation. N'hésitez pas à la consulter.
+Pour générer la javadoc :
+1) Utilisateurs Linux, entrez la commande : "make doc".
+1) Utilisateurs Windows, entrez la commande : "mingw32-make doc".
